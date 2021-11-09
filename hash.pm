@@ -6,7 +6,8 @@ print "\$data{Kumar} = $data{Kumar}\n";
 =cut
 
 
-=head
+#=head
+%data = ('John Paul'=> 45, 'Lisa', 30, Kumar=>40);
 @arr=%data;
 print "@arr\n";
 $arr_size=@arr;
@@ -15,7 +16,7 @@ print "$arr_size\n";
 print %hash . "\n";
 $scalar=%data;
 print "$scalar\n";
-=cut
+#=cut
 
 =head
 #Extacting slices from hashes
@@ -82,6 +83,7 @@ else {
 }
 =cut
 
+=head
 #exists() for Arrays
 @arr = "This is kalyan";
 if( exists($arr['is'] ) )
@@ -91,5 +93,5 @@ if( exists($arr['is'] ) )
 else { 
 	print "not present\n"; 
 }
-
+=cut
 

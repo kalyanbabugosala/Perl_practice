@@ -1,28 +1,31 @@
 =head
 %data = ('John Paul'=> 45, 'Lisa', 30, Kumar=>40);
-print "\$data{'45'} = $data{45}\n";
+print "\$data{John paul} = $data{'John Paul'}\n";
 print "\$data{'Lisa'} = $data{'Lisa'}\n";
-print "\$data{Kumar} = $data{Kumar}\n";
+print "\$data{Kumar} = $data{'Kumar'}\n";
 =cut
 
 
-#=head
+=head
 %data = ('John Paul'=> 45, 'Lisa', 30, Kumar=>40);
 @arr=%data;
 print "@arr\n";
 $arr_size=@arr;
 print "$arr_size\n";
 %hash=%data;
-print %hash . "\n";
-$scalar=%data;
-print "$scalar\n";
-#=cut
+print %hash,"\n";
+
+=cut
 
 =head
 #Extacting slices from hashes
 %data = (JohnPaul => 45, Lisa => 30, Kumar => 40); 
-@array = @data{JohnPaul, Lisa}; 
-print "Array : @array\n";
+@array = %data{JohnPaul,Lisa}; 
+print "Array :\n",@array;
+$scalar=%data;
+print "\n Size is $scalar\n";
+%hash =%data;
+print %hash;
 =cut
 
 =head
@@ -86,6 +89,7 @@ else {
 =head
 #exists() for Arrays
 @arr = "This is kalyan";
+@intege =qw/1 2 3 4 5/; 
 if( exists($arr['is'] ) )
 {
 	print "is present\n"; 
@@ -95,3 +99,70 @@ else {
 }
 =cut
 
+
+
+=head
+my %capital_of = (
+    Bangladesh => 'Dhaka',
+    Tuvalu     => 'Funafuti',
+    Zimbabwe   => 'Harare',
+    Eritrea    => 'Asmara',
+    Botswana   => 'Gaborone',
+);
+
+print $capital_of{'Bangladesh'},"\n";
+
+my @african_capitals = ($capital_of{'Zimbabwe'}, $capital_of{'Eritrea'}, $capital_of{'Botswana'});
+print @african_capitals,"\n";
+
+my @african_capitals = @capital_of{'Zimbabwe', 'Eritrea', 'Botswana'};
+print @african_capitals,"\n";
+
+
+@capital_of{'Belize', 'Kyrgyzstan'} = ('Belmopan', 'Bishkek');
+ 
+print %capital_of;
+=cut
+
+
+
+use Data::Dumper qw(Dumper); 
+my %company = ('Sales' =>    {
+                                'Brown' => 'Manager',
+                                'Smith' => 'Salesman',
+                                'Albert' => 'Salesman', 
+                            }, 
+            'Marketing' =>  {
+                                'Penfold' => 'Designer',
+                                'Evans' => 'Tea-person',
+                                'Jurgens' => 'Manager', 
+                            },
+            'Production' => {
+                                'Cotton' => 'Paste-up',
+                                'Ridgeway' => 'Manager',
+                                'Web' => 'Developer', 
+                            },
+            );
+
+print "$company{'Sales'}->{'Brown'} \n";
+
+@arr =keys %{$company{'Sales'}};
+print @arr;
+
+
+=head
+print "Traversing hash using For loop: "."\n";
+print "\n";
+  
+# traversing hash using for loop
+for my $key (keys %company) 
+{
+    print "$key: \n";
+    for my $ele (keys %{$company{$key}}) 
+    {
+        print " $ele: " . $company{$key}->{$ele} . "\n";
+    }
+}
+
+#print Dumper \%company;
+=cut

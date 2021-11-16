@@ -1,6 +1,6 @@
 
 =head
-# Display all the files in /tmp directory.
+# Display all the files in present directory.
 $dir = "\*";# '/' for root dir, '\' for present dir.
 my @files = glob( $dir );
 
@@ -11,7 +11,7 @@ foreach (@files ) {
 =cut
 
 =head
-# Display all the C source files in /tmp directory.
+# Display all the C source files in present directory.
 $dir = "\*.txt";
 @files = glob( $dir );
 
@@ -74,8 +74,9 @@ $dir = "C:/Users/dell/OneDrive/Documents/perl_start/New_perl";
 # This changes perl directory  and moves you inside /home directory.
 chdir( $dir ) or die "Couldn't go inside $dir directory, $!";
 print "Your new location is $dir\n";
+=cut
 
-
+=head
 die "Error: Can't change directory!: $!" unless(chdir("C:/Users/dell/OneDrive/Documents/perl_start/New_perl"));
 
 #WARN will just report the error and proceed to next stmts but DIE will stop execution when error occurs 

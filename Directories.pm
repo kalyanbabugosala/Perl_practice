@@ -1,7 +1,7 @@
 
 =head
 # Display all the files in present directory.
-$dir = "\*";# '/' for root dir, '\' for present dir.
+$dir = "\*";        # '/' for root dir, '\' for present dir.
 my @files = glob( $dir );
 
 foreach (@files ) {
@@ -52,7 +52,7 @@ closedir DIR;
 
 #Creating a directory
 =head
-$dir = "C:/Users/dell/OneDrive/Documents/perl_start/New_perl";
+$dir = "C:/Users/dell/OneDrive/Documents/perl_start/New_perl1";
 
 # This creates perl directory in /tmp directory.
 mkdir( $dir ) or die "Couldn't create $dir directory, $!";
@@ -61,15 +61,16 @@ print "Directory created successfully\n";
 
 #Removing directory
 =head
-$dir = "/New_perl";
+$dir = "New_perl1";
 
 # This removes perl directory from /tmp directory.
 rmdir( $dir ) or die "Couldn't remove $dir directory, $!";
 print "Directory removed successfully\n";
 =cut
+
 #Change the directory
 =head
-$dir = "C:/Users/dell/OneDrive/Documents/perl_start/New_perl";
+$dir ="C:/Users/dell/OneDrive/Documents/perl_start/New_perl";
 
 # This changes perl directory  and moves you inside /home directory.
 chdir( $dir ) or die "Couldn't go inside $dir directory, $!";

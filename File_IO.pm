@@ -2,18 +2,6 @@
 # <-read,  >-write,   >>-append.
 open(w, ">>","File1.txt") or die "Couldn't open file File1.txt, $!";
 
-#=head
-if(<DATA>)
-{
-	print "Data is there";
-}
-else
-{
-	print "NO data found";
-}
-#=cut
-#print <DATA>; 
-
 print w "add to previous content";
 
 seek w,0,2;
@@ -23,29 +11,15 @@ while(<w>) {
 }
 =cut
 
+
 =head
 open(R,">Hello.txt") or die "Could not open the File1.txt, $!";
 
 print ("Data in file is:".<R>);
 =cut
 
-=head
-if(R != EOF)
-{
-	print "No previous data is presented you can enter freshly";
-	
-}
-else
-{
-	print "Previous data is:",<R>;
-	#seek(R,0,0);
-}
-=cut
 
-
-=head
-
-
+#=head
 # Opening File Hello.txt in Read mode
 open(r, "<", "Hello.txt");
 
@@ -76,7 +50,7 @@ print @lines;
 
 # Close the FileHandle
 close(r);
-=cut
+#=cut
 
 
 #Get the file description or file information.
@@ -126,12 +100,12 @@ close(DATA);
 
 #Renaming a file name
 =head
-rename ("\Destination.txt", "\Dest.txt" );
+rename("\Destination.txt", "\Dest.txt" );
 =cut
 
 #Deleting existing file
 =head
-unlink ("File1.txt");
+unlink("File1.txt");
 =cut
 
 

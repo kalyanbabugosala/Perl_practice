@@ -1,3 +1,4 @@
+use DateTime;
 # localtime() function, which returns values for the current date and time if given no arguments.
 =head
 sec,     # seconds of minutes from 0 to 61
@@ -19,10 +20,14 @@ print "sec,min,hour,mday,mon,year,wday,yday,isdst\n";
 print "$sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst","\n";
 print "$mday $months[$mon] $days[$wday]\n";
 
+=head
 #Assigning scalar variable
 
 $datestring = localtime();
 print "Local date and time $datestring\n";
+
+=cut
+
 
 =head
 GMT time(Greenwich Mean Time)
@@ -32,6 +37,7 @@ When called in list context, $isdst, the last value returned by gmtime, is alway
 There is no Daylight Saving Time in GMT.
 =cut
 
+=head
 $datestring = gmtime();
 print "GMT date and time $datestring\n";
 
@@ -40,6 +46,8 @@ print "Formating Date And Time";
 ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime();
 printf("Time Format - HH:MM:SS\n");
 printf("%02d:%02d:%02d\n", $hour, $min, $sec);
+=cut
+
 
 =head
 #Differences between print and printf
@@ -47,6 +55,7 @@ $scalar="Kalyan";
 printf("%s",$scalar);
 =cut
 
+=head
 print "EPOCH TIME\n";
 $epoc = time();
 print "Number of seconds since Jan 1, 1970 - $epoc\n";
@@ -61,5 +70,5 @@ $epoc = $epoc - 24 * 60 * 60;   # one day before of current date.
 
 $datestring = localtime($epoc);
 print "Yesterday's date and time $datestring\n";
-
+=cut
 
